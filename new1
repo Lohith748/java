@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class demkoo {
+	public static void main (String [] args) {
+		String[] namelist = {"pow","zow","cow","tow","bow","mow"};
+		Arrays.sort(namelist);
+		int lb = 0, ub = namelist.length-1;
+		String searchName = new java.util.Scanner(System.in).nextLine();
+		while(ub>=lb) {
+			int middle = (lb +ub)/ 2;
+			if (namelist[middle].equals(searchName)) {
+				System.out.println("found @"+(middle+1));
+				return ;
+				
+			}
+			else if(namelist[middle].compareTo(searchName)>0)
+				ub = middle - 1;
+			else
+				lb = middle + 1;
+		}
+		System.out.println("Not Found");
+		
+	}
+
+}
